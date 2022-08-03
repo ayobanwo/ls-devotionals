@@ -97,7 +97,25 @@ font-family: RalewayItalics;
     box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.06);
     border-radius: 23px;
     padding: 40px;
+    font-family: Raleway;
+    
 }
 .reload-img{
     float: right;
+}
+.articles{
+    display: flex;
+    flex-direction: column;
+}
+.article{
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+}
+.art-img{
+    border-radius: 23px;
+    margin-right: 10px;
+}
+.read-more{
+    color: #F43E3E;
 }
