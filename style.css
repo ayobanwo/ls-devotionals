@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Raleway;
+    src: url(fonts/Raleway-SemiBold.ttf);
+}
+@font-face {
+    font-family: RalewayItalics;
+    src: url(fonts/Raleway-BoldItalic.ttf);
+}
+nav{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        padding: 20px 5% !important;
+        font-size: 20px;
+        
+}
+section{
+    padding: 30px 10%;
+}
+.row{
+    border-radius: 10px;
+    margin-right: 0;
+}
+.devo-div{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 0 0 80px 0;
+}
+.devo-img-div{
+    /* object-fit: contain; */
+    /* max-width: fit-content; */
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+}
+.ask-p{
+font-family: RalewayItalics;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 179.4%;
+    text-align: center;
+    padding: 0 8%;
+} 
+.ask-hr{
+        width: 50%;
+            margin-bottom: 30px;
+        border: 1px solid #9D6A06;
+}
+.text{
+    padding: 40px;
+    text-align: left;
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 179.4%;
+    color: #161616;
+}
+.red-text{
+    color: #9D6A06;
+    font-weight: 600;
+}
+.red-text-b{
+    color: #9D6A06;
+    font-weight: 700;
+}
+.h-inline{
+    display: inline;
+}
