@@ -25,7 +25,7 @@ section{
     border-radius: 10px;
     margin-right: 0;
 }
-.devo-div{
+.devo-inner{
     border-radius: 10px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -123,4 +123,29 @@ font-family: RalewayItalics;
 }
 .read-more{
     color: #F43E3E;
+}
+@media (max-width:1400px) {
+    section{
+        padding-right: 4%;
+    }
+    .article-text p{
+        font-size: 15px;
+    }
+}
+@media (max-width:1200px) {
+    .sub-div, .articles-div{
+        margin-left: 0;
+        width: 70%;
+    }
+    .sub-div{
+        margin-top: 100px;
+    }
+    .aside-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .devo-div{
+        padding: 0 10%;
+    }
 }
