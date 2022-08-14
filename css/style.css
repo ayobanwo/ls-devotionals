@@ -305,6 +305,9 @@ font-family: RalewayItalics;
     }
 }
 @media (max-width:750px){
+    .main{
+        display: block;
+    }
     .devo-img-div{
         height: 200px;
     }
@@ -312,12 +315,35 @@ font-family: RalewayItalics;
         padding: 0 5%;
     }
     .sidebar{
-        position: absolute;
+        position: fixed;
         z-index: 3;
         background: white;
         display: none;
     }
     .sub-div, .articles-div{
         width: 90%;
+    }
+}
+@media (max-width:550px) {
+    .devo-outer{
+        margin-left: 0 !important;
+    }
+    .devo-div h3{
+        font-size: 20px;
+    }
+    .devo-img-div + p{
+        font-size: 15px;
+    }
+    .article{
+        display: block;
+    }
+    .article-text{
+        margin-top: 20px;
+    }
+    h5{
+        font-size: 15px;
+    }
+    .red-text, .red-text-b{
+        font-size: 13px;
     }
 }

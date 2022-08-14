@@ -37,6 +37,5 @@ ham.addEventListener('click', e=>{
 		sidebar.style.display = 'none';
 		sidebar.classList.remove('slideInLeft');
 		sidebar.classList.add('slideInRight');
-
 	}
 })
