@@ -33,7 +33,7 @@ ham.addEventListener('click', e=>{
 		sidebar.classList.add('slideInLeft');
 		sidebar.classList.remove('slideInRight');
 	}
-	else if(sidebar.style.display !== 'none'){
+	else{
 		sidebar.style.display = 'none';
 		sidebar.classList.remove('slideInLeft');
 		sidebar.classList.add('slideInRight');
