@@ -19,19 +19,27 @@ nav{
     margin-left: auto;
 }
 section{
-    padding: 0 10% 10% 0;
-
+    padding: 0 2% 10% 0;
+    
+}
+.main{
+    display: flex;
+    /* flex-wrap: wrap; */
 }
 .sidebar{
     box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.06);
-    width: 150px;
-    position: sticky;
-    top: 55px;
-    height: 450px;
+    /* width: 150px; */
+    display: none;
+    height: 500px;
     border-radius: 23px;
+    position: sticky;
+    top: 80px;
 }
 .sidebar-icon-div{
     padding:50px 30px;
+}
+.sidebar-icon-div img{
+    display: inline;
 }
 .icon-border{
     border-top: 2px solid #C7C7C7;
@@ -41,6 +49,10 @@ section{
 .row{
     border-radius: 10px;
     margin-right: 0;
+}
+.devo-outer{
+    margin-left: 20px !important;
+    margin-top: 50px;
 }
 .devo-inner{
     border-radius: 10px;
@@ -269,7 +281,7 @@ font-family: RalewayItalics;
 }
 @media (max-width:1400px) {
     section{
-        padding-right: 4%;
+        padding-right: 0;
     }
     .article-text p{
         font-size: 15px;

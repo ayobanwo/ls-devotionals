@@ -1,4 +1,6 @@
 let togBtn = document.querySelector('#toggleBtn');
+let ham = document.querySelector('#ham');
+let sidebar = document.querySelector('.sidebar');
 
 togBtn.addEventListener('click', e=>{
     function toggleFullScreen() {
@@ -22,4 +24,17 @@ togBtn.addEventListener('click', e=>{
        }
      }
      toggleFullScreen();
+})
+
+ham.addEventListener('click', e=>{
+	if(sidebar.style.display === 'none'){
+		sidebar.style.display = 'inline';
+		sidebar.classList.add('wow animated slideInLeft');
+	}
+	else{
+		sidebar.style.display = 'none';
+		sidebar.classList.remove('wow animated slideInLeft');
+		sidebar.classList.add('wow animated slideInRight');
+
+	}
 })
