@@ -29,7 +29,6 @@ section{
 .sidebar{
     box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.06);
     /* width: 150px; */
-    display: none;
     height: 500px;
     border-radius: 23px;
     position: sticky;

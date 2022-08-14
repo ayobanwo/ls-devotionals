@@ -29,12 +29,14 @@ togBtn.addEventListener('click', e=>{
 ham.addEventListener('click', e=>{
 	if(sidebar.style.display === 'none'){
 		sidebar.style.display = 'inline';
-		sidebar.classList.add('wow animated slideInLeft');
+		// sidebar.classList.add('slide');
+		sidebar.classList.add('slideInLeft');
+		sidebar.classList.remove('slideInRight');
 	}
-	else{
+	else if(sidebar.style.display !== 'none'){
 		sidebar.style.display = 'none';
-		sidebar.classList.remove('wow animated slideInLeft');
-		sidebar.classList.add('wow animated slideInRight');
+		sidebar.classList.remove('slideInLeft');
+		sidebar.classList.add('slideInRight');
 
 	}
 })
