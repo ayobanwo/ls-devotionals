@@ -29,36 +29,21 @@ form.addEventListener('submit', e=>{
 
     console.log(dataObj);
 
-    // fetch("https://dailydevotionals.herokuapp.com/api/post/create.php", {
-    //     method: 'post',
-    //     body: JSON.stringify(dataObj),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // }).then(function (response){
-    //     return response.json();
-    // }).then(function (responseData){
-    //     let message = responseData.message;
-    //     console.log(message);
-    //     console.log(responseData);
-    //   return message;
-    // }).catch(function (error){
-    //     console.log(error);
-    // })
+    fetch("https://dailydevotionals.herokuapp.com/api/post/create.php", {
+        method: 'post',
+        body: JSON.stringify(dataObj),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response){
+        return response.json();
+    }).then(function (responseData){
+        let message = responseData.message;
+        console.log(message);
+        console.log(responseData);
+      return message;
+    }).catch(function (error){
+        console.log(error);
+    })
 
-    fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
-        .then((response) => response.json())
-        .then((data) => {
-            const arr = data.data
-
-            for (let i = 0; i < arr.length; i++) {
-                if (arr[i].day === '2022-09-01') {
-                    todayContent = arr[i];
-                }
-            }
-        }).catch(function (error){
-            console.log(error);
-        })
-
-    console.log(result);
 })
