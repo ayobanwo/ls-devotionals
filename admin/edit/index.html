@@ -16,62 +16,51 @@
     <main>
         <h1>Devotional Content Edit</h1>
     
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Content</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="date">Sept 1</td>
-                    <td>
-                        <textarea name="" id="content" >
-                            
-                        </textarea>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Save</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="date">Sept 2</td>
-                    <td>
-                        <textarea name="" id="content" >
-
-                        </textarea>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Save</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="date">Sept 3</td>
-                    <td>
-                        <textarea name="" id="content" >
-
-                        </textarea>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Save</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="date">Sept 4</td>
-                    <td>
-                        <textarea name="" id="content" >
-
-                        </textarea>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Save</button>
-                    </td>
-                </tr>
-                
-            </tbody>
-        </table>
+        <form action="">
+            <div class="form-group">
+                <label for="day" class="font-weight-bold">Input Devotional Date to Update</label>
+                <input type="date" class="form-control" id="day">
+                <button class="btn btn-dark ">Select</button>
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="bible_text">Bible Text</label>
+                <input type="text" class="form-control" id="bible_text">
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <textarea class="form-control" id="body"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="prayer">Prayer</label>
+                <input type="text" class="form-control" id="prayer">
+            </div>
+            <div class="form-group">
+                <label for="further_study">Further Study</label>
+                <input type="text" class="form-control" id="further_study">
+            </div>
+            <div class="form-group">
+                <label for="am_scripture">AM Scriptures</label>
+                <input type="text" class="form-control" id="am_scripture">
+            </div>
+            <div class="form-group">
+                <label for="pm_scripture">PM Scriptures</label>
+                <input type="text" class="form-control" id="pm_scripture">
+            </div>
+            <div class="form-group">
+                <label for="week_teaching">Teaching of the week</label>
+                <input type="text" class="form-control" id="week_teaching">
+            </div>
+            <div class="form-group">
+                <label for="image_url">Image URL</label>
+                <input type="text" class="form-control" id="image_url">
+            </div>
+        
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
     </main>
 </body>
 </html>
