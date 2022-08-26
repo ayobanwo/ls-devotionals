@@ -3,14 +3,15 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
     .then((response) => response.json())
     .then((data) => {
         const arr = data.data
+        console.log(arr);
 
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = today.getFullYear();
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        // var yyyy = today.getFullYear();
 
-        today = yyyy + '-' + mm+ '-' + dd;
-        today = '2022-09-01'
+        // today = yyyy + '-' + mm+ '-' + dd;
+        today = '2022-09-02'
         console.log(today);
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === today) {
