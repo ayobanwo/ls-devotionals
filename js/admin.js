@@ -39,6 +39,9 @@ form.addEventListener('submit', e=>{
         return response.json();
     }).then(function (responseData){
         let message = responseData.message;
+        if (responseData.status === 'success') {
+            form.submit();
+        }
         console.log(message);
         console.log(responseData);
       return message;
