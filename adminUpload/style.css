@@ -18,3 +18,8 @@ form{
 label{
     font-weight: bold;
 }
+@media (max-width:900px) {
+    form{
+        width: 100%;
+    }
+}
