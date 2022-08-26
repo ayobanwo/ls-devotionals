@@ -34,7 +34,7 @@ form.addEventListener('submit', e=>{
         body: JSON.stringify(dataObj),
         headers: {
             'Content-Type': 'application/json'
-        }
+        } 
     }).then(function (response){
         return response.json();
     }).then(function (responseData){
