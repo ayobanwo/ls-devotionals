@@ -3,8 +3,6 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
     .then((response) => response.json())
     .then((data) => {
         const arr = data.data
-        console.log(arr);
-
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -12,7 +10,6 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
 
         today = yyyy + '-' + mm+ '-' + dd;
         
-        console.log(today);
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === today) {
                 todayContent = arr[i];
