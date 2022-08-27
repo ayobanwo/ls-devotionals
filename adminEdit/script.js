@@ -2,49 +2,61 @@ let selectBtn = document.querySelector('.slct-btn');
 let form = document.querySelector('form');
 let body = document.querySelector('#body')
 let title = document.querySelector('#title')
+let id = document.querySelector('#id')
 let bible_text = document.querySelector('#bible_text')
 let prayer = document.querySelector('#prayer')
 let further_study = document.querySelector('#further_study')
+ let day = document.querySelector('#day')
 let am_scripture = document.querySelector('#am_scripture')
 let pm_scripture = document.querySelector('#pm_scripture')
 let week_teaching = document.querySelector('#week_teaching')
 let image_url = document.querySelector('#image_url')
+let msg = document.querySelector('#msg')
+
 selectBtn.addEventListener('click', e =>{
     e.preventDefault();
     fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
         .then((response) => response.json())
         .then((data) => {
             const arr = data.data
-            let day = document.querySelector('#day').value;
-
-            console.log(day);
+            let slctDate = day.value;            
             for (let i = 0; i < arr.length; i++) {
-                if (arr[i].day === day) {
+                if (arr[i].day === slctDate) {
                     todayContent = arr[i];
+                    msg.innerHTML = '';
+                }
+                else{
+                    msg.innerHTML = "Devotional for this date does not exist. Select another date"
+                    setTimeout(() => {
+                        msg.innerHTML = '';
+                        day.value = '';
+                    }, 5000);
                 }
             }
     
             body.innerHTML = todayContent.body
             title.value = todayContent.title
+            id.value = todayContent.id
             bible_text.value = todayContent.bible_text
             prayer.value = todayContent.prayer
             further_study.value = todayContent.further_study
             am_scripture.value = todayContent.am_scripture
             pm_scripture.value = todayContent.pm_scripture
             week_teaching.value = todayContent.week_teaching
+
     
         }).catch(function (error){
-            console.log(error);
+            // console.log(error);
         })
 })
 
-console.log(prayer.value);
 form.addEventListener('submit', e=>{
     e.preventDefault();
 
     dataObj = {};
 
     dataObj['body'] = body.value;
+    dataObj['id'] = id.value;
     dataObj['title'] = title.value;
     dataObj['day'] = day.value;
     dataObj['bible_text'] = bible_text.value;
@@ -66,8 +78,9 @@ form.addEventListener('submit', e=>{
         return response.json();
     }).then(function (responseData){
         let message = responseData.message;
-        console.log(message);
-        console.log(responseData);
+        if (responseData.status === 'success') {
+            form.submit();
+        }
       return message;
     }).catch(function (error){
         console.log(error);

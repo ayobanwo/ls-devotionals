@@ -5,13 +5,13 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
         const arr = data.data
         console.log(arr);
 
-        // var today = new Date();
-        // var dd = String(today.getDate()).padStart(2, '0');
-        // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        // var yyyy = today.getFullYear();
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
 
-        // today = yyyy + '-' + mm+ '-' + dd;
-        today = '2022-09-02'
+        today = yyyy + '-' + mm+ '-' + dd;
+        
         console.log(today);
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === today) {
@@ -29,10 +29,10 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
         let week_teaching = document.querySelector('#week_teaching')
         let image_url = document.querySelector('#image_url')
 
-
+        
         body.innerHTML = todayContent.body
         title.innerHTML = todayContent.title
-        // day.innerHTML = todayContent.day
+        day.innerHTML = moment(todayContent.day).format("dddd, MMMM Do")
         bible_text.innerHTML = todayContent.bible_text
         prayer.innerHTML = todayContent.prayer
         further_study.innerHTML = todayContent.further_study
