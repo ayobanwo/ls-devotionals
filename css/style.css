@@ -6,7 +6,10 @@
     font-family: RalewayItalics;
     src: url(../fonts/Raleway-BoldItalic.ttf);
 }
-
+body {
+    margin: 0;
+    padding: 0;
+}
 nav{
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
         padding: 20px 2% !important;
