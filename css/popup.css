@@ -34,8 +34,6 @@
     background: black;
     color: white;
     border-radius: 50%;
-    /* font-family: verdana; */
-    
 }
 .close:hover{
     cursor: pointer;
