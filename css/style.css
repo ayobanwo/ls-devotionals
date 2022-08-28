@@ -16,10 +16,15 @@ nav{
         font-size: 20px;
         /* display: flex !important; */
 }
+.aux-logo{
+    object-fit: contain;
+    width: 121px;
+    height: 56px;
+    margin: auto;
+}
 #toggleBtn{
     float: right;
     margin: 0 ;
-    margin-left: auto;
 }
 section{
     padding: 0 2% 10% 0;
@@ -162,7 +167,6 @@ font-family: RalewayItalics;
 }
 
 .hamburger {
-    position: fixed;
     top: 20px;
     z-index: 999;
     display: block;
