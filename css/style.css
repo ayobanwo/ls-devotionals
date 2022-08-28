@@ -315,6 +315,9 @@ font-family: RalewayItalics;
     }
 }
 @media (max-width:750px){
+    nav{
+        padding: 20px 6% !important;
+    }
     .main{
         display: block;
     }
