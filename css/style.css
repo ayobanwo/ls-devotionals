@@ -167,13 +167,11 @@ font-family: RalewayItalics;
 }
 
 .hamburger {
-    position: fixed;
-    top: 20px;
+    position: relative;
     z-index: 999;
     display: block;
     width: 32px;
     height: 32px;
-    margin-left: 15px;
     background: transparent;
     border: none;
 }
