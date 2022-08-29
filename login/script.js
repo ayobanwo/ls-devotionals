@@ -20,9 +20,9 @@ form.addEventListener('submit', e=>{
     }).then(function (responseData){
         let status = responseData.status;
         let token = responseData._token;
-        // if (responseData.status === 'success') {
-        //     form.submit();
-        // }
+        if (responseData.status === 'success') {
+          form.submit();
+        }
         console.log(status);
         console.log(token);
     }).catch(function (error){
