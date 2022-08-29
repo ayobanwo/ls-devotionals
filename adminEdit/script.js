@@ -29,7 +29,7 @@ selectBtn.addEventListener('click', e =>{
                     msg.innerHTML = "Devotional for this date does not exist. Select another date"
                     setTimeout(() => {
                         msg.innerHTML = '';
-                        day.value = '';
+                        // day.value = '';
                     }, 5000);
                 }
             }
@@ -53,7 +53,7 @@ selectBtn.addEventListener('click', e =>{
 form.addEventListener('submit', e=>{
     e.preventDefault();
  
-    let _token = JSON.parse(sessionStorage.getItem('token'));
+    let _token = sessionStorage.getItem('_token');
 
     dataObj = {};
 
@@ -68,7 +68,7 @@ form.addEventListener('submit', e=>{
     dataObj['pm_scripture'] = pm_scripture.value;
     dataObj['week_teaching'] = week_teaching.value;
     dataObj['image_url'] = image_url.value;
-    dataObj['_token'] = token
+    dataObj['_token'] = _token
 
     console.log(dataObj);
     fetch("https://dailydevotionals.herokuapp.com/api/patch/update.php", {

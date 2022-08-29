@@ -20,13 +20,13 @@ form.addEventListener('submit', e=>{
     }).then(function (responseData){
         console.log(responseData);
         let status = responseData.status;
-        let token = responseData._token;
+        let _token = responseData._token;
         if (responseData.status === 'success') {
           form.submit();
         }
-        sessionStorage.setItem('_token', token);
+        sessionStorage.setItem('_token', _token);
         console.log(status);
-        console.log(token);
+        console.log(_token);
     }).catch(function (error){
         console.log(error);
     })
