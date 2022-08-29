@@ -1,0 +1,21 @@
+body {
+    background: #daf0e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+
+form {
+    margin-top: 50px;
+    padding: 10%;
+    background: azure;
+    border-radius: 20px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px;
+}

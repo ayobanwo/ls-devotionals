@@ -26,6 +26,7 @@ form.addEventListener('submit', e=>{
     dataObj['pm_scripture'] = pm_scripture;
     dataObj['week_teaching'] = week_teaching;
     dataObj['image_url'] = image_url;
+    dataObj['_token'] = _token;
 
     console.log(dataObj);
 
