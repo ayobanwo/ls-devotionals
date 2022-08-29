@@ -53,7 +53,7 @@ selectBtn.addEventListener('click', e =>{
 form.addEventListener('submit', e=>{
     e.preventDefault();
  
-    let token = JSON.parse(sessionStorage.getItem('token');
+    let _token = JSON.parse(sessionStorage.getItem('token');
 
     dataObj = {};
 
