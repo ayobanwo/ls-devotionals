@@ -15,7 +15,7 @@ form.addEventListener('submit', e=>{
     let image_url = document.querySelector('#image_url').value;
 
     dataObj = {};
-    let _token = JSON.parse(sessionStorage.getItem('token');
+    let _token = JSON.parse(sessionStorage.getItem('token'));
     
     dataObj['body'] = body;
     dataObj['title'] = title;
