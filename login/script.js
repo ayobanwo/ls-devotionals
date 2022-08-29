@@ -18,6 +18,7 @@ form.addEventListener('submit', e=>{
     }).then(function (response){
         return response.json();
     }).then(function (responseData){
+        console.log(responseData);
         let status = responseData.status;
         let token = responseData._token;
         if (responseData.status === 'success') {
