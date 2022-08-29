@@ -43,6 +43,7 @@ selectBtn.addEventListener('click', e =>{
             am_scripture.value = todayContent.am_scripture
             pm_scripture.value = todayContent.pm_scripture
             week_teaching.value = todayContent.week_teaching
+            image_url.value = todayContent.image_url
 
     
         }).catch(function (error){
