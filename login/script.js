@@ -1,9 +1,9 @@
-let email = document.querySelector('#email').value;
-let password = document.querySelector('#password').value;
 let form = document.querySelector('form');
 
 form.addEventListener('submit', e=>{
     e.preventDefault();
+    let email = document.querySelector('#email').value;
+    let password = document.querySelector('#password').value;
     dataObj = {}
 
     dataObj['email'] = email;
