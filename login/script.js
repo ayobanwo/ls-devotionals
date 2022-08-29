@@ -24,6 +24,7 @@ form.addEventListener('submit', e=>{
         if (responseData.status === 'success') {
           form.submit();
         }
+        sessionStorage.setItem('_token', token);
         console.log(status);
         console.log(token);
     }).catch(function (error){
