@@ -8,7 +8,7 @@ form.addEventListener('submit', e=>{
 
     dataObj['email'] = email;
     dataObj['password'] = password;
-
+    console.log(dataObj);
     fetch("https://dailydevotionals.herokuapp.com/api/post/login.php", {
         method: 'post',
         body: JSON.stringify(dataObj),
