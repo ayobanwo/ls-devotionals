@@ -59,8 +59,10 @@ section{
     margin-right: 0;
 }
 .devo-outer{
-    margin-left: 20px !important;
+    margin: auto 10%;
+    /* margin-left: 20px !important; */
     margin-top: 50px;
+    
 }
 .devo-inner{
     border-radius: 10px;
@@ -110,6 +112,9 @@ font-family: RalewayItalics;
     font-size: 13px;
     line-height: 179.4%;
     color: #161616;
+}
+#prayer{
+    font-weight: bold;
 }
 .red-text{
     color: #9D6A06;

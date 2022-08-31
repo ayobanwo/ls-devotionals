@@ -9,7 +9,7 @@ fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
         var yyyy = today.getFullYear();
 
         today = yyyy + '-' + mm+ '-' + dd;
-        today = '2022-09-02'
+        today = '2022-09-01'
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === today) {
                 todayContent = arr[i];
