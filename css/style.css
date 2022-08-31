@@ -344,7 +344,8 @@ font-family: RalewayItalics;
 }
 @media (max-width:550px) {
     .devo-outer{
-        margin-left: 0 !important;
+        margin: 0 ;
+        margin-top: 50px;
     }
     .devo-div h3{
         font-size: 20px;
