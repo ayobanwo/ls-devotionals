@@ -163,13 +163,21 @@ font-family: RalewayItalics;
     margin-top: 40px;
     align-items: center;
 }
+.dev-title{
+    margin-bottom: 5px;
+}
+.dev-date{
+    font-size: 12px;
+}
+.readnow{
+    cursor: pointer;
+    color: #F43E3E;
+}
 .art-img{
     border-radius: 23px;
     margin-right: 10px;
 }
-.read-more{
-    color: #F43E3E;
-}
+
 
 .hamburger {
     position: relative;
