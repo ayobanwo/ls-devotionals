@@ -48,7 +48,7 @@ function prevDev(yyyy, mm, dd, arr) {
                 let articles = document.createElement("div");
                 articles.classList.add("article");
                 articles.innerHTML = `
-                <img src="images/art-img.png" alt="" class="art-img">
+                <img src="images/readaux2.jpg" alt="" class="art-img">
                 <div class="article-text">
                     <p class="dev-title">
                     ${thisDayContent.title}
