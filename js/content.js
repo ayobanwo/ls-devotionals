@@ -32,49 +32,45 @@ function todayDevDisp(yyyy, mm, dd, arr, today) {
 }
 
 function prevDev(yyyy, mm, dd, arr) {
-     let articleList = document.querySelector('.article-list')
+    let articleList = document.querySelector('.article-list')
      
     let today = new Date();
     let day = today.getDate()
-    dday = today.getDate()
-    for (let i = 0; i < dday; i++) {
-        day = day -1
-        if (day >= 1) {
-           dd = String(day).padStart(2, '0')
-           thisDay = yyyy + '-' + mm+ '-' + dd;
-           for (let i = 0; i < arr.length; i++) {
-                if (arr[i].day === thisDay) {
-                   thisDayContent = arr[i];
-                }
-            }
-            console.log(thisDayContent.title);
-            let articles = document.createElement("div");
-            articles.classList.add("article");
-            articles.innerHTML = `
 
+    for (let i = day-1; i > 0 ; i--) {
+        day = day -1
+    
+        dd = String(day).padStart(2, '0')
+        thisDay = yyyy + '-' + mm+ '-' + dd;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].day === thisDay) {
+                thisDayContent = arr[i];
+                let articles = document.createElement("div");
+                articles.classList.add("article");
+                articles.innerHTML = `
                 <img src="images/art-img.png" alt="" class="art-img">
                 <div class="article-text">
                     <p class="dev-title">
-                        ${thisDayContent.title}
+                    ${thisDayContent.title}
                     </p>
                     <p class="dev-date">
-                        ${moment(thisDayContent.day).format("dddd, MMMM Do")}
+                    ${moment(thisDayContent.day).format("dddd, MMMM Do")}
                     </p>
-                    <button class="readnow">READ NOW</button>
+                    <a class=${'read'+dd} href="#bookmrk">
+                    READ NOW
+                    </a>
                 </div>
-            `;
-            articleList.appendChild(articles)
+                `;
+                articleList.appendChild(articles)
+                let readbtn =  document.querySelector( `${'.read'+dd} `) ;
 
-            
-            let readnow = document.querySelector('.readnow');
-            readnow.addEventListener("click", e=>{
-                dispDev(yyyy, mm, dd, arr, today)
-                readnow.innerHTML = 'blue'
-            })
-        }
-
+                const ff = dd;
+                readbtn.addEventListener("click", e=>{
+                        dispDev(yyyy, mm, dd = ff, arr, today)
+                    })
+            }
+        }   
     }
-    
 }
 
 fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")

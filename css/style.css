@@ -176,8 +176,13 @@ font-family: RalewayItalics;
 .art-img{
     border-radius: 23px;
     margin-right: 10px;
+    width: 200px;
+    height: 150px;
+    /* object-fit: contain; */
 }
-
+.article a{
+    color: green;
+}
 
 .hamburger {
     position: relative;
