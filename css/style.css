@@ -73,12 +73,10 @@ section{
 .devo-div h5{
     font-family: Raleway;
 }
-.devo-img-div{
-    /* object-fit: contain; */
-    /* max-width: fit-content; */
+.image_url{
+    
     border-radius: 10px 10px 0 0;
     margin-bottom: 20px;
-    background: url(../images/nations.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 262px;

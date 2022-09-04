@@ -14,7 +14,7 @@ function dispDev(yyyy, mm, dd, arr, today) {
     let am_scripture = document.querySelector('#am_scripture')
     let pm_scripture = document.querySelector('#pm_scripture')
     let week_teaching = document.querySelector('#week_teaching')
-    let image_url = document.querySelector('#image_url')
+    var image_url = document.querySelector('.image_url')
 
     
     body.innerHTML = todayContent.body
@@ -26,6 +26,7 @@ function dispDev(yyyy, mm, dd, arr, today) {
     am_scripture.innerHTML = todayContent.am_scripture
     pm_scripture.innerHTML = todayContent.pm_scripture
     week_teaching.innerHTML = todayContent.week_teaching
+    image_url.style.backgroundImage = todayContent.image_url;
 }
 function todayDevDisp(yyyy, mm, dd, arr, today) {
     dispDev(yyyy, mm, dd, arr, today); 
@@ -48,7 +49,7 @@ function prevDev(yyyy, mm, dd, arr) {
                 let articles = document.createElement("div");
                 articles.classList.add("article");
                 articles.innerHTML = `
-                <img src="images/readaux2.jpg" alt="" class="art-img">
+                <img src="images/readaux2.jpg" class="image_url art-img">
                 <div class="article-text">
                     <p class="dev-title">
                     ${thisDayContent.title}
