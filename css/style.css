@@ -111,8 +111,19 @@ font-family: RalewayItalics;
     line-height: 179.4%;
     color: #161616;
 }
+#body{
+    text-align: justify;
+}
 #prayer{
     font-weight: bold;
+}
+#teaching-text {
+    color: #9D6A06;
+    font-weight: 600;
+    transition: ease-in-out 0.5s;
+}
+#teaching-text:hover{
+    text-decoration: none;
 }
 .red-text{
     color: #9D6A06;
@@ -181,7 +192,13 @@ font-family: RalewayItalics;
 .article a{
     color: green;
 }
-
+#thumbnail{
+    height: 120px;
+    width: 150px;
+    border-radius: 15px;
+    margin-right: 10px;
+    object-fit: fill;
+}
 .hamburger {
     position: relative;
     z-index: 999;

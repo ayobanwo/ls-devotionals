@@ -26,7 +26,7 @@ function dispDev(yyyy, mm, dd, arr, today) {
     am_scripture.innerHTML = todayContent.am_scripture
     pm_scripture.innerHTML = todayContent.pm_scripture
     week_teaching.innerHTML = todayContent.week_teaching
-    image_url.style.backgroundImage = todayContent.image_url;
+    image_url.style.backgroundImage = `url(${todayContent.image_url})`
 }
 function todayDevDisp(yyyy, mm, dd, arr, today) {
     dispDev(yyyy, mm, dd, arr, today); 
@@ -49,7 +49,7 @@ function prevDev(yyyy, mm, dd, arr) {
                 let articles = document.createElement("div");
                 articles.classList.add("article");
                 articles.innerHTML = `
-                <img src="images/readaux2.jpg" class="image_url art-img">
+                <img class='${'thumb'+dd}' id="thumbnail">
                 <div class="article-text">
                     <p class="dev-title">
                     ${thisDayContent.title}
@@ -57,14 +57,20 @@ function prevDev(yyyy, mm, dd, arr) {
                     <p class="dev-date">
                     ${moment(thisDayContent.day).format("dddd, MMMM Do")}
                     </p>
-                    <a class=${'read'+dd} href="#bookmrk">
+                    <a class=${'read'+dd} href="#bookmrk" >
                     READ NOW
                     </a>
-                </div>
-                `;
+                    </div>
+                    `;
+                    
                 articleList.appendChild(articles)
-                let readbtn =  document.querySelector( `${'.read'+dd} `) ;
+                
+                let thumbpic =  document.querySelector( `${'.thumb'+dd} `) ;
+                console.log(thumbpic);
+                console.log(thisDayContent.image_url);
+                thumbpic.src = thisDayContent.image_url;
 
+                let readbtn =  document.querySelector( `${'.read'+dd} `) ;
                 const ff = dd;
                 readbtn.addEventListener("click", e=>{
                         dispDev(yyyy, mm, dd = ff, arr, today)
