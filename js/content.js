@@ -66,8 +66,7 @@ function prevDev(yyyy, mm, dd, arr) {
                 articleList.appendChild(articles)
                 
                 let thumbpic =  document.querySelector( `${'.thumb'+dd} `) ;
-                console.log(thumbpic);
-                console.log(thisDayContent.image_url);
+                
                 thumbpic.src = thisDayContent.image_url;
 
                 let readbtn =  document.querySelector( `${'.read'+dd} `) ;

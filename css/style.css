@@ -111,14 +111,11 @@ font-family: RalewayItalics;
     line-height: 179.4%;
     color: #161616;
 }
-#body{
-    text-align: justify;
-}
 #prayer{
     font-weight: bold;
 }
 #teaching-text {
-    color: #9D6A06;
+    color: #303964;
     font-weight: 600;
     transition: ease-in-out 0.5s;
 }
@@ -171,6 +168,19 @@ font-family: RalewayItalics;
     display: flex;
     margin-top: 40px;
     align-items: center;
+}
+.article-list{
+    height: 800px;
+    overflow-y: scroll;
+}
+.article-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.article-list::-webkit-scrollbar-thumb {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    background: #072F01;
+    border-radius: 5px;
 }
 .dev-title{
     margin-bottom: 5px;
