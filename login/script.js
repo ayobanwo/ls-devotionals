@@ -21,6 +21,8 @@ form.addEventListener('submit', e=>{
         console.log(responseData);
         let status = responseData.status;
         let _token = responseData._token;
+        let start_time = responseData.start_time;
+        let expiration = responseData.expiration;
         if (responseData.status === 'success') {
           form.submit();
         }
