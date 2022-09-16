@@ -25,6 +25,8 @@ form.addEventListener('submit', e=>{
           form.submit();
         }
         sessionStorage.setItem('_token', _token);
+        sessionStorage.setItem('start_time', start_time);
+        sessionStorage.setItem('expiration', expiration);
         console.log(status);
         console.log(_token);
     }).catch(function (error){
