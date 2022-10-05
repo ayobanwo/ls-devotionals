@@ -7,9 +7,10 @@ fetch("https://dailydevotionals.herokuapp.com/api/get/getAll.php")
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     let dday = yyyy + '-' + mm+ '-' + dd;
-    todayDevDisp(yyyy, mm, dd, arr,);
+    todayDevDisp(yyyy, mm, dd, arr);
     prevDev(yyyy, mm, arr)
     searchOpt(arr, dday); 
+    refresh(yyyy, mm, dd, arr);
 
 })
 .catch(function (error){
@@ -109,46 +110,4 @@ function dispDevUi(thisDayData, dd, articleList, arr,){
         })
 }
 
-// function searchOpt(arr) {
-//     let slctOpt = document.querySelector('#slctopt');
-//     let slctbtn = document.querySelector('.slctbtn');
-//     let slctDate = document.querySelector('#slctdate');
-//     let mOpt = document.querySelector('#monthopt');
 
-//     console.log(slctOpt, slctDate, mOpt);
-//     slctOpt.addEventListener('change', e=>{
-//         if(slctOpt.value === 'month'){
-//             mOpt.style.display = 'inline'
-//             slctbtn.style.display = 'inline'
-//             slctDate.style.display = 'none'
-//             if (arr) {
-                
-//             }
-//         }
-//         else if(slctOpt.value === 'day'){
-//             slctDate.style.display = 'inline'
-//             slctbtn.style.display = 'inline'
-//             mOpt.style.display = 'none'
-//             slctDate.addEventListener()
-//             day = slctDate.value
-//             console.log(day);
-//         }
-
-//     })
-// } 
-
-// function monthSearch(arr) {
-//     let mOpt = document.querySelector('#monthopt')
-//     mOpt.addEventListener('change', e => {
-//         let month =  e.target.value;
-//         let articleList = document.querySelector('.article-list')
-//         articleList.innerHTML = ''; 
-//         arr.forEach(dev => {
-//             if (dev.day.includes(month)) {
-//                thisDayData = dev.day 
-//                 dd = thisDayData.slice(-2)
-//                 dispDevUi(thisDayData ,dd, articleList)
-//             }
-//         });
-//     })
-// }

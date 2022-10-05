@@ -97,4 +97,12 @@ function searchOpt(arr, dday, yyyy, mm, today) {
 	})
 } 
 
-// searchOpt();
+function refresh(yyyy, mm, dd, arr) {
+	let imgclick = document.querySelector('.aux-logo')
+	
+	imgclick.addEventListener('click', e => {
+		e.preventDefault();
+		todayDevDisp(yyyy, mm, dd, arr);
+	
+	})
+}
