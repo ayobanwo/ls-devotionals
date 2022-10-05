@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <script src="js/content.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -31,7 +30,7 @@
 </head>
 
 <body>
-    <div class='popup' style="display: flex;">
+    <!-- <div class='popup' style="display: flex;">
 
        <p>
             <h1>Helpful Tips</h1> 
@@ -76,7 +75,7 @@
             
        </p>
         <span class="close">x</span>
-    </div>
+    </div> -->
     <nav class="navbar navbar-expand-xl navbar-light sticky-top bg-white" id="navbar">
         <button type="button" class="hamburger animated fadeInLeft is-closed" id="ham" data-toggle="offcanvas">
             <span class="hamb-top"></span>
@@ -166,7 +165,24 @@
                     <div class="articles-div">
                         <div class="article-head">
                             Previous Devotionals <span></span>
-                        </div>
+                        </div> <br>
+                        Search by :
+                        
+                        <select name="selectopt" id="slctopt">
+                            <option value="" disabled selected>select</option>
+                            <option value="month">Month</option>
+                            <option value="day">Day</option>
+                        </select>
+
+                        <input type="date" name="date" id="slctdate">
+
+                        <select name="search" id="monthopt">
+                            <option value="" disabled selected>select</option>
+                            <option value="2022-09">September</option>
+                            <option value="2022-10">October</option>
+                        </select>
+
+                        <button class="btn btn-dark slctbtn" >search</button>
                         <div class="article-list">
                             <!-- <div class="article">
                                 <img src="images/art-img.png" alt="" class="art-img">
@@ -185,6 +201,8 @@
         </div>
         
     </section>
+    <script src="js/content.js"></script>
+
     <script src="js/script.js"></script>
     <script src="js/hamburger.js"></script>
    
@@ -199,7 +217,7 @@
     <script src="js/holder.min.js"></script>
     <!-- <script src="js/jquery.js"></script> -->
     <script src="js/wow.min.js"></script>
-    <script src="js/popup.js"></script>
+    <!-- <script src="js/popup.js"></script> -->
     
 </body>
 

@@ -157,6 +157,12 @@ font-family: RalewayItalics;
     font-family: Raleway;
     
 }
+#slctopt, #monthopt{
+    padding: 8px;
+}
+#slctdate, #monthopt, .slctbtn{
+    display: none;
+}
 .reload-img{
     float: right;
 }

@@ -1,7 +1,32 @@
-function dispDev(yyyy, mm, dd, arr, today) {
-    today = yyyy + '-' + mm+ '-' + dd;
+fetch("https://dailydevotionals.herokuapp.com/api/get/getAll.php")
+.then((response) => response.json())
+.then((data) => {
+    const arr = data.data
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    let dday = yyyy + '-' + mm+ '-' + dd;
+    todayDevDisp(yyyy, mm, dd, arr,);
+    prevDev(yyyy, mm, arr)
+    searchOpt(arr, dday); 
+
+})
+.catch(function (error){
+    console.log(error);
+})
+
+//Display Today's Devotional
+function todayDevDisp(yyyy, mm, dd, arr) {
+    
+    let todayDate = yyyy + '-' + mm+ '-' + dd;
+    dispDev(todayDate, arr); 
+}
+
+//Display Devotional content after checking if Date is in the Dev array
+function dispDev(todayDate, arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].day === today) {
+        if (arr[i].day === todayDate) {
             todayContent = arr[i];
         }
     }
@@ -28,69 +53,102 @@ function dispDev(yyyy, mm, dd, arr, today) {
     week_teaching.innerHTML = todayContent.week_teaching
     image_url.style.backgroundImage = `url(${todayContent.image_url})`
 }
-function todayDevDisp(yyyy, mm, dd, arr, today) {
-    dispDev(yyyy, mm, dd, arr, today); 
-}
 
-function prevDev(yyyy, mm, dd, arr) {
+//Display previous devotionals in the present month
+function prevDev(yyyy, mm, arr) {
     let articleList = document.querySelector('.article-list')
      
     let today = new Date();
     let day = today.getDate()
+    // console.log(day);
 
-    for (let i = day-1; i > 0 ; i--) {
-        day = day -1
-    
+    for (let i = day; i > 0 ; i--) {
+        
         dd = String(day).padStart(2, '0')
         thisDay = yyyy + '-' + mm+ '-' + dd;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === thisDay) {
-                thisDayContent = arr[i];
-                let articles = document.createElement("div");
-                articles.classList.add("article");
-                articles.innerHTML = `
-                <img class='${'thumb'+dd}' id="thumbnail">
-                <div class="article-text">
-                    <p class="dev-title">
-                    ${thisDayContent.title}
-                    </p>
-                    <p class="dev-date">
-                    ${moment(thisDayContent.day).format("dddd, MMMM Do")}
-                    </p>
-                    <a class=${'read'+dd} href="#bookmrk" >
-                    READ NOW
-                    </a>
-                    </div>
-                    `;
-                    
-                articleList.appendChild(articles)
-                
-                let thumbpic =  document.querySelector( `${'.thumb'+dd} `) ;
-                
-                thumbpic.src = thisDayContent.image_url;
-
-                let readbtn =  document.querySelector( `${'.read'+dd} `) ;
-                const ff = dd;
-                readbtn.addEventListener("click", e=>{
-                        dispDev(yyyy, mm, dd = ff, arr, today)
-                    })
+                thisDayData = arr[i];
+                // console.log(thisDayData, "lopdate");
+                dispDevUi(thisDayData, dd, articleList, arr)
             }
         }   
+        day = day -1
     }
 }
 
-fetch(" https://dailydevotionals.herokuapp.com/api/get/getAll.php")
-    .then((response) => response.json())
-    .then((data) => {
-        const arr = data.data
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        let yyyy = today.getFullYear();
+function dispDevUi(thisDayData, dd, articleList, arr,){
+    let articles = document.createElement("div");
+    articles.classList.add("article");
+    articles.innerHTML = `
+    <img class='${'thumb'+dd}' id="thumbnail">
+    <div class="article-text">
+        <p class="dev-title">
+        ${thisDayData.title}
+        </p>
+        <p class="dev-date">
+        ${moment(thisDayData.day).format("dddd, MMMM Do")}
+        </p>
+        <a class=${'read'+dd} href="#bookmrk" >
+        READ NOW
+        </a>
+        </div>
+        `;
+        
+    articleList.appendChild(articles)
     
-        todayDevDisp(yyyy, mm, dd, arr, today);
-        prevDev(yyyy, mm, dd, arr)
+    let thumbpic =  document.querySelector( `${'.thumb'+dd} `) ;
+    
+    thumbpic.src = thisDayData.image_url;
 
-    }).catch(function (error){
-        console.log(error);
-    })
+    let readbtn =  document.querySelector( `${'.read'+dd} `) ;
+    // const ff = dd;
+    const todayDate = thisDayData.day
+    readbtn.addEventListener("click", e=>{
+            dispDev(todayDate, arr)
+        })
+}
+
+// function searchOpt(arr) {
+//     let slctOpt = document.querySelector('#slctopt');
+//     let slctbtn = document.querySelector('.slctbtn');
+//     let slctDate = document.querySelector('#slctdate');
+//     let mOpt = document.querySelector('#monthopt');
+
+//     console.log(slctOpt, slctDate, mOpt);
+//     slctOpt.addEventListener('change', e=>{
+//         if(slctOpt.value === 'month'){
+//             mOpt.style.display = 'inline'
+//             slctbtn.style.display = 'inline'
+//             slctDate.style.display = 'none'
+//             if (arr) {
+                
+//             }
+//         }
+//         else if(slctOpt.value === 'day'){
+//             slctDate.style.display = 'inline'
+//             slctbtn.style.display = 'inline'
+//             mOpt.style.display = 'none'
+//             slctDate.addEventListener()
+//             day = slctDate.value
+//             console.log(day);
+//         }
+
+//     })
+// } 
+
+// function monthSearch(arr) {
+//     let mOpt = document.querySelector('#monthopt')
+//     mOpt.addEventListener('change', e => {
+//         let month =  e.target.value;
+//         let articleList = document.querySelector('.article-list')
+//         articleList.innerHTML = ''; 
+//         arr.forEach(dev => {
+//             if (dev.day.includes(month)) {
+//                thisDayData = dev.day 
+//                 dd = thisDayData.slice(-2)
+//                 dispDevUi(thisDayData ,dd, articleList)
+//             }
+//         });
+//     })
+// }
