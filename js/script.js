@@ -19,7 +19,7 @@ togBtn.addEventListener('click', e=>{
 					} else if (document.mozCancelFullScreen) {
 						 document.mozCancelFullScreen();
 					} else if (document.webkitCancelFullScreen) {
-						document.webkitCancelFullScreen();
+						document.webkitCancelFullScreen();z
 					}
 			 }
 		 }
@@ -72,9 +72,8 @@ function searchOpt(arr, dday, yyyy, mm, today) {
 					}
 				});
 			})
-
-
 		}
+
 		else if(slctOpt.value === 'day'){
 				slctDate.style.display = 'inline'
 				searchbtn.style.display = 'inline'
@@ -93,6 +92,7 @@ function searchOpt(arr, dday, yyyy, mm, today) {
 					});
 				})
 		}
+		
 		else if(slctOpt.value === 'title'){
 			titleSearch.style.display = 'inline';
 			slctDate.style.display = 'none';

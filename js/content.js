@@ -18,7 +18,6 @@ fetch("https://dailydevotionals.herokuapp.com/api/get/getAll.php")
 
 //Display Today's Devotional
 function todayDevDisp(yyyy, mm, dd, arr) {
-    
     let todayDate = yyyy + '-' + mm+ '-' + dd;
     dispDev(todayDate, arr); 
 }
