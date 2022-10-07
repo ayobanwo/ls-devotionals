@@ -42,17 +42,20 @@ ham.addEventListener('click', e=>{
 
 function searchOpt(arr, dday, yyyy, mm, today) {
 	let slctOpt = document.querySelector('#slctopt');
-	let slctbtn = document.querySelector('.slctbtn');
+	let searchbtn = document.querySelector('.searchbtn');
+	let notfound = document.querySelector('.notfound');
 	let slctDate = document.querySelector('#slctdate');
 	let mOpt = document.querySelector('#monthopt');
+	let titleSearch = document.querySelector('#searchtitle');
 
-	// console.log(slctOpt, slctDate, mOpt);
 	slctOpt.addEventListener('change', e=>{
 		let articleList = document.querySelector('.article-list')
 	
 		if(slctOpt.value === 'month'){
 			mOpt.style.display = 'inline'
 			slctDate.style.display = 'none'
+			searchbtn.style.display = 'none'
+			titleSearch.style.display = 'none'
 			
 			mOpt.addEventListener('change', e => {
 				articleList.innerHTML = ''; 
@@ -74,35 +77,77 @@ function searchOpt(arr, dday, yyyy, mm, today) {
 		}
 		else if(slctOpt.value === 'day'){
 				slctDate.style.display = 'inline'
-				slctbtn.style.display = 'inline'
+				searchbtn.style.display = 'inline'
 				mOpt.style.display = 'none'
-				slctbtn.addEventListener('click', e=>{
+				titleSearch.style.display = 'none'
+				searchbtn.addEventListener('click', e=>{
 					articleList.innerHTML = ''; 
 					let day = slctDate.value
-					// console.log('clicked');
 					found = false;
 					arr.forEach(dev => {
-						thisDayData = dev 
+						thisDayData = dev; 
 						dd = dev.day.slice(-2)
 						if(dev.day === day){
-							console.log(thisDayData, dd);
 							dispDevUi(thisDayData , dd, articleList, arr)
 						}
-						// else{
-						// 	articleList.innerHTML = 'Devotional for this day is not available, select another date'; 
-						// }
 					});
 				})
+		}
+		else if(slctOpt.value === 'title'){
+			titleSearch.style.display = 'inline';
+			slctDate.style.display = 'none';
+			searchbtn.style.display = 'none'
+			mOpt.style.display = 'none';
+			titleSearch.addEventListener('keyup', e => {
+				articleList.innerHTML = ''; 
+				const searchVal = e.target.value.toUpperCase()
+
+				if (searchVal !== '') {
+
+					// foundDevArr = arr.filter( dev => {
+					// 	devTitle = dev.title;
+					// 	devrawday = dev.day.replaceAll('-', '');
+					// 	todrawday = dday.replaceAll('-', '');
+					// 	return devTitle.includes(searchVal) && devrawday <= todrawday ;
+					// })
+					// if (foundDevArr !== ''){
+					// 	foundDevArr.forEach( dev =>{
+					// 		console.log('found');
+					// 		thisDayData = dev;
+					// 		dispDevUi(thisDayData , dd, articleList, arr)
+					// 	})
+					// }
+					// else{
+					// 	articleList.innerHTML = 'Devotional not found';
+					// }
+					arr.forEach(dev => {
+						devTitle = dev.title;
+						thisDayData = dev;
+						dd = dev.day.slice(-2); 
+						// console.log(searchVal);
+						devrawday = dev.day.replaceAll('-', '');
+						todrawday = dday.replaceAll('-', '');
+						if(devTitle.includes(searchVal) && devrawday <= todrawday){
+							dispDevUi(thisDayData , dd, articleList, arr)
+							// found = true;
+							// return console.log(found);
+						}
+						// else{
+						// 	articleList.innerHTML = "not found"
+						// }
+					})	
+					
+				}
+		
+			})
 		}
 	})
 } 
 
 function refresh(yyyy, mm, dd, arr) {
 	let imgclick = document.querySelector('.aux-logo')
-	
 	imgclick.addEventListener('click', e => {
 		e.preventDefault();
 		todayDevDisp(yyyy, mm, dd, arr);
-	
 	})
 }

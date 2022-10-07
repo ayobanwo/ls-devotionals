@@ -11,7 +11,6 @@ fetch("https://dailydevotionals.herokuapp.com/api/get/getAll.php")
     prevDev(yyyy, mm, arr)
     searchOpt(arr, dday); 
     refresh(yyyy, mm, dd, arr);
-
 })
 .catch(function (error){
     console.log(error);
@@ -42,7 +41,6 @@ function dispDev(todayDate, arr) {
     let week_teaching = document.querySelector('#week_teaching')
     var image_url = document.querySelector('.image_url')
 
-    
     body.innerHTML = todayContent.body
     title.innerHTML = todayContent.title
     day.innerHTML = moment(todayContent.day).format("dddd, MMMM Do")
@@ -58,19 +56,15 @@ function dispDev(todayDate, arr) {
 //Display previous devotionals in the present month
 function prevDev(yyyy, mm, arr) {
     let articleList = document.querySelector('.article-list')
-     
     let today = new Date();
     let day = today.getDate()
-    // console.log(day);
 
     for (let i = day; i > 0 ; i--) {
-        
         dd = String(day).padStart(2, '0')
         thisDay = yyyy + '-' + mm+ '-' + dd;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].day === thisDay) {
                 thisDayData = arr[i];
-                // console.log(thisDayData, "lopdate");
                 dispDevUi(thisDayData, dd, articleList, arr)
             }
         }   
@@ -78,7 +72,7 @@ function prevDev(yyyy, mm, arr) {
     }
 }
 
-function dispDevUi(thisDayData, dd, articleList, arr,){
+function dispDevUi(thisDayData, dd, articleList, arr){
     let articles = document.createElement("div");
     articles.classList.add("article");
     articles.innerHTML = `
@@ -95,19 +89,12 @@ function dispDevUi(thisDayData, dd, articleList, arr,){
         </a>
         </div>
         `;
-        
     articleList.appendChild(articles)
-    
     let thumbpic =  document.querySelector( `${'.thumb'+dd} `) ;
-    
     thumbpic.src = thisDayData.image_url;
-
     let readbtn =  document.querySelector( `${'.read'+dd} `) ;
-    // const ff = dd;
     const todayDate = thisDayData.day
     readbtn.addEventListener("click", e=>{
             dispDev(todayDate, arr)
         })
 }
-
-

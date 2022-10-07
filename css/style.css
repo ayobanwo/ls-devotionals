@@ -74,7 +74,7 @@ section{
     font-family: Raleway;
 }
 .image_url{
-    
+    background:url('../images/solascriptura.jpg');
     border-radius: 10px 10px 0 0;
     margin-bottom: 20px;
     background-size: cover;
@@ -99,7 +99,7 @@ font-family: RalewayItalics;
 } 
 .ask-hr{
         width: 50%;
-        margin-bottom: 30px;
+            margin-bottom: 30px;
         border: 1px solid #9D6A06;
 }
 .text{
@@ -110,9 +110,7 @@ font-family: RalewayItalics;
     font-size: 13px;
     line-height: 179.4%;
     color: #161616;
-}
-#prayer{
-    font-weight: bold;
+    text-align: justify;
 }
 #teaching-text {
     color: #303964;
@@ -121,6 +119,9 @@ font-family: RalewayItalics;
 }
 #teaching-text:hover{
     text-decoration: none;
+}
+#prayer{
+    font-weight: bold;
 }
 .red-text{
     color: #9D6A06;
@@ -155,12 +156,16 @@ font-family: RalewayItalics;
     border-radius: 23px;
     padding: 40px;
     font-family: Raleway;
-    
 }
 #slctopt, #monthopt{
     padding: 8px;
 }
-#slctdate, #monthopt, .slctbtn{
+#slctdate, #monthopt, .searchbtn, #searchtitle{
+    margin-top: 20px;
+    display: none;
+}
+.notfound{
+    margin-top: 20px;
     display: none;
 }
 .reload-img{
@@ -184,7 +189,7 @@ font-family: RalewayItalics;
 }
 
 .article-list::-webkit-scrollbar-thumb {
-    background: #20a829;
+    background: #072F01;
     border-radius: 5px;
 }
 .dev-title{
