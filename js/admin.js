@@ -32,7 +32,7 @@ form.addEventListener('submit', e=>{
 
     console.log(dataObj);
 
-    fetch("https://dailydevotionals.herokuapp.com/api/post/create.php", {
+    fetch("https://whitefieldmissions.org/backends/api/post/create.php", {
         method: 'post',
         body: JSON.stringify(dataObj),
         headers: {
