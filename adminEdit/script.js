@@ -72,7 +72,7 @@ form.addEventListener('submit', e=>{
     dataObj['_token'] = _token
 
     console.log(dataObj);
-    fetch("https://dailydevotionals.herokuapp.com/api/patch/update.php", {
+    fetch("https://whitefieldmissions.org/backends/api/patch/update.php", {
         method: 'patch',
         body: JSON.stringify(dataObj),
         headers: {
