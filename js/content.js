@@ -1,4 +1,4 @@
-fetch("https://dailydevotionals.herokuapp.com/api/get/getAll.php")
+fetch("https://whitefieldmissions.org/backends/api/get/getAll.php")
 .then((response) => response.json())
 .then((data) => {
     const arr = data.data
